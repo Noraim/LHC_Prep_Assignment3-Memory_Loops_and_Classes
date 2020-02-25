@@ -6,18 +6,28 @@
 #include <iostream>
 using namespace std;
 int main () {
-  int numbers[6];
-  int * p;
-  p = numbers;
+// Declaring there to have an output of 6 total values 
+   int numbers[6];  
+// Declaring pointer  as an integer  
+   int *p;
+// Starting at the 1st holder    
+   p = numbers;
+// Declaring the 1st holder to be 1 from the 6 output values 
   *p = 1;
-p++;
-*p = 4;
-  p = &numbers[2];
-  *p = numbers[0];
-  
-  p = numbers + *p;
+// Moving along to 2nd place holder 
+   p++;
+// Declaing the 2nd holder to be 4 from the 6 output values 
   *p = 4;
+// moving along to 3rd place holder 
+   p = &numbers[2];
+// Declaring the 3rd holder to be the same number from the first holder, which is 1  
+  *p = numbers[0];
+// moving along to 4th place holder which adds 4 more holders from the previous value, which is filled with random values 
+   p = numbers + *p;
+  *p = 4;
+// moving along to 5th place holder, where there is an alternating + or - value with 5 place holders  
   p = numbers+1;
+//Assures, the 6th place holder will end with 5 
   *(p+4) = 5;
 cout << "Numbers : "<<numbers[0] <<" "<<numbers[1] <<" "<<numbers[2] <<" "<<numbers[3] <<" "<<numbers[4] <<" "<<numbers[5]<<endl;
  return 0; 
